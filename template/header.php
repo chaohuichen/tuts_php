@@ -16,6 +16,14 @@
             align-self: center;
         }
 
+        .brand-text-info {
+            color: #cbb09c !important;
+            display: 'flex';
+            font-size: 20px;
+            justify-content: center;
+            align-self: center;
+        }
+
         form {
             max-width: 460px;
             margin: 20px auto;
