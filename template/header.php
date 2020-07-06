@@ -35,9 +35,9 @@
 <body class='grey lighten-4'>
     <nav class="white z-depth-0">
         <div class="container">
-            <a href="#" class='brand-log brand-text'>Ninjia Pizza</a>
+            <a href="index.php" class='brand-log brand-text'>Ninjia Pizza</a>
             <ul id='nav-mobile' class='right hide-on-small-and-down'>
-                <li><a her="#" class='btn brand z-depth-0'>Add a Pizza</a></li>
+                <li><a href="add.php" class='btn brand z-depth-0'>Add a Pizza</a></li>
             </ul>
         </div>
     </nav>

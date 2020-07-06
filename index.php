@@ -1,12 +1,7 @@
 <?php
 //Mysqli or PDO
 //connect to database
-$conn = mysqli_connect('localhost', 'peter', '123456', 'ninijia_pizza');
-
-//check connection
-if (!$conn) {
-    echo 'Connection error:' . mysqli_connect_error();
-}
+include('config/db_connect.php');
 //write query for all pizzas
 $sql = 'SELECT title,ingredients,id FROM pizzas ORDER BY create_at';
 
@@ -49,7 +44,7 @@ mysqli_close($conn);
                         </ul>
                     </div>
                     <div class='card-action right-align'>
-                        <a href="#" class="brand-text-info">more info</a>
+                        <a href="details.php?id=<?php echo $pizza['id'] ?>" class="brand-text-info">more info</a>
                     </div>
 
                 </div>

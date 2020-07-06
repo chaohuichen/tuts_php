@@ -1,4 +1,6 @@
 <?php
+
+include('config/db_connect.php');
 //isset() check any value has been set
 //$_GET post put glable var 
 // if (isset($_GET['submit'])) {
@@ -44,9 +46,24 @@ if (isset($_POST['submit'])) {
     if (array_filter($errors)) {
         // echo 'errors in the from';
     } else {
+        //escape any bad data and save to db
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+        //need double qutote
+        $sql = "INSERT INTO pizzas(title,email,ingredients) VALUES('$title','$email','$ingredients')";
+
+        //save to database and check
+        if (mysqli_query($conn, $sql)) {
+            //success
+            //redirect the page function 
+            header('Location:index.php');
+        } else {
+            //error
+            echo 'query error' . mysqli_error($conn);
+        }
         //echo 'form is valid';
-        //redirect the page function 
-        header('Location:index.php');
+
     }
 } //end of post check
 ?>
